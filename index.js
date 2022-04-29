@@ -11,6 +11,34 @@ const tutorials = [
   'what is JSONP?'
 ];
 
+//tutorials is an Array, how to access an Array and iterate?
+
+const stringSplit = tutorials.map(function(tutorial){
+  //return console.log(tutorial)
+  const newTutorial = tutorial.split(" ");
+  //console.log (newTutorial);
+  return newTutorial;
+} )
+
+// Split each string in each array to individual letter strings, how? 
+//https://www.freecodecamp.org/news/three-ways-to-title-case-a-sentence-in-javascript-676a9175eb27/
+// using charAt(index).
+
+const UpperCombine= stringSplit.map(function(wordArr){
+  //console.log(word)
+  const charSplit = (wordArr.map(indv => indv.charAt(0).toUpperCase() + indv.slice(1)));
+  //console.log (charSplit)
+  return charSplit;
+})
+
+// Put these mfkin strings back together
+
+const finishLine = UpperCombine.map(function(newWord){
+  const UpdatedTutorial = newWord.join(" ");
+  return UpdatedTutorial;
+})
+
 const titleCased = () => {
-  return tutorials
+  return finishLine
 }
+
